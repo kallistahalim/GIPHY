@@ -1,0 +1,77 @@
+body{
+    background-image : url("../img/background.jpg");
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+
+}
+
+h1{
+    font-family: 'Gloria Hallelujah', cursive;
+    font-size: 48px;
+}
+
+.container{
+    margin-top:50px;
+    text-align: center;
+}
+
+button{
+    font-family: 'Gloria Hallelujah', cursive;
+    color: #53e226;
+    background-color: black;
+    padding: 10px;
+    font-size :18px;
+    border-radius: 40px;
+    cursor: pointer;
+
+}
+
+label{
+    font-family: 'Gloria Hallelujah', cursive;
+    font-size: 24px;
+}
+
+#drink-input, #add-drink{
+    font-family: 'Gloria Hallelujah', cursive;
+    padding: 10px 25px 10px 25px;
+    border-radius: 30px;
+    cursor: pointer;
+}
+
+#button-view{
+    width: 90%
+}
+
+.images{
+    margin: 25px;
+    width: 300px;
+    cursor: pointer;
+    margin-top: 75px;
+    margin-bottom: 0px;
+    border-radius: 40px;
+    border-style: solid;
+    border-color: white;
+}
+
+.rating{
+    font-family: 'Gloria Hallelujah', cursive;
+    font-size: 24px;
+}
+
+#footer{
+    background-color: transparent;
+    width:100%;
+    height:10px; 
+    text-align: left;
+    padding: 10px 0px 10px 6px;
+    font-family: 'Gloria Hallelujah', cursive;
+    color : black;
+    font-size: 12px;
+    background-repeat: repeat;
+    background-attachment: scroll;
+    background-position: 0% 0%;
+    position: fixed;
+    bottom: 0pt;
+    left: 0pt;
+}

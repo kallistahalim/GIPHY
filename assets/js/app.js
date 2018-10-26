@@ -42,8 +42,15 @@
                        img.attr("data-animate", resp_data[i].images.fixed_height.url);
                        img.attr("src", resp_data[i].images.fixed_height_still.url)
                        console.log(img)
-                       $(".btn-container").append(img);
 
+                        var r = $("<p>");
+                        r.addClass("rating");
+                        r.append(resp_data[i].rating);
+                        
+                        $(".btn-container").append(img);
+                        $(".btn-container").append(r);
+
+                       console.log(resp_data[i].rating)
                        
 
 
@@ -71,8 +78,12 @@
                var drink = $("#drink-input").val().trim();
                $("#drink-input").val("");
 
+               if (!topics.includes(drink)) {
+                topics.push(drink);
+               }
 
-               topics.push(drink);
+
+               
                console.log(topics);
 
                renderButton();
