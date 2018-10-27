@@ -54,22 +54,19 @@
 
                         var r = $("<p>");
                         r.addClass("rating");
-                        var download = $("<button>");
+                        var download = $("<a>");
+                        download.attr("href", resp_data[i].images.fixed_height_still.url);
+                        download.attr("download", "image");
                         download.text("Download");
                         r.append(download);
 
                         r.append(resp_data[i].rating);
 
-                        var favorite = $("<button>");
-                        favorite.text("Favorite")
-                        
-                        r.append(favorite);
-
                         var fav = $("<a>");
                         fav.attr("rel", "sidebar");
-                        fav.attr("href", location.href);
+                        fav.attr("href", "#");
                         fav.attr("title", document.title);
-                        fav.text('Favorite');
+                        fav.text("Favorite");
                         fav.click(function() {
                             if (window.sidebar) { // Mozilla Firefox Bookmark
                                 window.sidebar.addPanel(location.href,document.title,"");
