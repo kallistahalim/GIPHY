@@ -67,7 +67,8 @@
                         fav.attr("href", "#");
                         fav.attr("title", document.title);
                         fav.text("Favorite");
-                        fav.click(function() {
+                        fav.click(function(e) {
+                            e.preventDefault();
                             if (window.sidebar) { // Mozilla Firefox Bookmark
                                 window.sidebar.addPanel(location.href,document.title,"");
                             } else if (window.external) { // IE Favorite
