@@ -2,12 +2,20 @@
            var api_key = "ckvCPO4jnCg338m2CttOtkDLb1bmZjK0"
            var count = 0;
            var location;
+           
 
+
+        //    function evilLaugh () {
+        //     var audio = $("audio");
+        //     audio.attr("src", "assets/audio/sound.mp3");
+        //     drinkButton[0].play();
+        //    }
 
            function renderButton() {
 
                $("#buttons-view").empty();
                $("#buttons-view").val("");
+            //    audio[0].play();
                for (var i = 0; i < topics.length; i++) {
 
                    var drinkButton = $("<button>");
@@ -16,6 +24,7 @@
                    drinkButton.text(topics[i]);
                    $("#buttons-view").append(drinkButton);
                }
+               
            }
 
 
@@ -45,7 +54,33 @@
 
                         var r = $("<p>");
                         r.addClass("rating");
+                        var download = $("<button>");
+                        download.text("Download");
+                        r.append(download);
+
                         r.append(resp_data[i].rating);
+
+                        var favorite = $("<button>");
+                        favorite.text("Favorite")
+                        
+                        r.append(favorite);
+
+                        var fav = $("<a>");
+                        fav.attr("rel", "sidebar");
+                        fav.attr("href", location.href);
+                        fav.attr("title", document.title);
+                        fav.text('Favorite');
+                        fav.click(function() {
+                            if (window.sidebar) { // Mozilla Firefox Bookmark
+                                window.sidebar.addPanel(location.href,document.title,"");
+                            } else if (window.external) { // IE Favorite
+                                window.external.AddFavorite(location.href,document.title); }
+                            else if (window.opera && window.print) { // Opera Hotlist
+                                this.title=document.title;
+                                return true;
+                            }
+                        });
+                        r.append(fav);
                         
                         $(".btn-container").append(img);
                         $(".btn-container").append(r);
@@ -90,7 +125,10 @@
            });
 
 
-           $(document).on("click", ".drink-button", displayDrinkGIF);
+           $(document).on("click", ".drink-button", displayDrinkGIF)
+           {
+        //    evilLaugh();
+           };
 
 
            renderButton();
