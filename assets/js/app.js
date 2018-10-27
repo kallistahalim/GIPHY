@@ -54,31 +54,7 @@
 
                         var r = $("<p>");
                         r.addClass("rating");
-                        var download = $("<a>");
-                        download.attr("href", resp_data[i].images.fixed_height_still.url);
-                        download.attr("download", "image");
-                        download.text("Download");
-                        r.append(download);
-
                         r.append(resp_data[i].rating);
-
-                        var fav = $("<a>");
-                        fav.attr("rel", "sidebar");
-                        fav.attr("href", "#");
-                        fav.attr("title", document.title);
-                        fav.text("Favorite");
-                        fav.click(function(e) {
-                            e.preventDefault();
-                            if (window.sidebar) { // Mozilla Firefox Bookmark
-                                window.sidebar.addPanel(location.href,document.title,"");
-                            } else if (window.external) { // IE Favorite
-                                window.external.AddFavorite(location.href,document.title); }
-                            else if (window.opera && window.print) { // Opera Hotlist
-                                this.title=document.title;
-                                return true;
-                            }
-                        });
-                        r.append(fav);
                         
                         $(".btn-container").append(img);
                         $(".btn-container").append(r);
